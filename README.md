@@ -10,6 +10,7 @@
 - **Beyond Correlation Filters: Learning Continuous Convolution Operators for Visual Tracking** (ECCV 2016), Martin Danelljan et al [[pdf]](https://arxiv.org/pdf/1611.09224.pdf)
 - **Learning Multi-Domain Convolutional Neural Networks for Visual Tracking** (CVPR 2016), Hyeonseob Nam Bohyung Han [[pdf]](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Nam_Learning_Multi-Domain_Convolutional_CVPR_2016_paper.pdf)
 - **End-to-end representation learning for Correlation Filter based tracking** (CVPR 2017), Jack Valmadre, Luca Bertinetto, João F. Henriques, Andrea Vedaldi, Philip H. S. Torr. [[paper]]
+- **others**, [[link]](https://zhuanlan.zhihu.com/p/27292838)
 
 ### 6D Object Pose Estimation
 - **SSD-6D: Making RGB-Based 3D Detection and 6D Pose Estimation Great Again** (ICCV 2017), Wadim Kehl et al.[[pdf]](http://openaccess.thecvf.com/content_ICCV_2017/papers/Kehl_SSD-6D_Making_RGB-Based_ICCV_2017_paper.pdf)
