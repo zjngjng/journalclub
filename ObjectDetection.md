@@ -24,3 +24,21 @@ The following conclusions are obtained through experiments:
 3. It is important to train with maximal variations in appearance and pose while restricting the scale to  a reasonable range. It seems that CNNs doesn't have the property of scale-invariance. It just memorizes objects of different scales. 
 
 *Scale normalization for image pyramid (SNIP)*: This paper use an image pyramid of three different resolutions, and each image will be associated with a scale range. If a GT box falls outside of the specified range of an image at one resolution, it will be considered as invalid and the anchors with have overlap with invalid GT boxes higher than 0.3 will also be considered as invalid anchor. Training from those invalid anchors will be ignore during back-propagation. During inference, we generate proposals for each resolution independently and don't select detections which fall outside a specified range at each resolution.
+
+[Kong, Tao, et al. "Ron: Reverse connection with objectness prior networks for object detection." CVPR 2017](https://arxiv.org/pdf/1707.01691.pdf)
+
+Three contributions: 
+
+- Multi-scale predictions from feature maps at different leves. Anchors/boxes of different scales are distributed to different feature maps, and each feature map is responsive to objects of particular scales.
+- Reverse connection similiar to FPN to fuse high-level features with low-level features.
+- Addition of prediciton of objectness prior parallel to the bounding box regression and classification. For backward propagation, the prior mask is binarized to select samples for udating the detection branch. (Faster R-CNN use RPN to filter background samples, objectness prior is used to guide the search of objects)
+- Two inception modules was used in the classification branch.
+
+[Cai, Zhaowei, and Nuno Vasconcelos. "Cascade R-CNN: Delving into High Quality Object Detection." CVPR 2018.](http://openaccess.thecvf.com/content_cvpr_2018/papers/Cai_Cascade_R-CNN_Delving_CVPR_2018_paper.pdf)
+
+An object detector trained with IOU threshold=0.5 produces noisy detections, while training with increased IOU has worse performance, this is because higher IOU threshold means less positive training samples and may result in overfitting, another reason is the mismatch of optimal IOU threshold between training and inference stages. In the training stage, if we use high quality proposals, the trained detector will only be optimal for high quality proposals but not for low-quality proposals during inference stage.
+
+In order to reduce the false positives (whose scores are a little higher than old IOU threshold=0.5), this paper propose a cascade CNN that uses the output of a detector to train the subsequent detector. This is motivate by the obeservation that the output IOU (prediction with gorund truth) is always better than input IOU (proposal with ground truth).
+
+Detection其实并不是一个很合适的分类问题，没有一个明确的离散的正负样本的定义，而是通过IoU来连续定义的。但是IoU这个指标很难通过gradient descent来优化，虽然之前也有一些IoU loss的工作，但是效果并不理想。Cascade RCNN便是一个在这个方向上很好的尝试。
+
