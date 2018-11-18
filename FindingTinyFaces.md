@@ -3,7 +3,7 @@
 It explores three aspects of the problem in finding small faces:
 1. scale invariance 
 2. image resolution
-3. contextual reasoning
+3. contextual
 4. https://zhuanlan.zhihu.com/p/27450260
 
 ##### Multi-task modeling of scales:
