@@ -1,7 +1,6 @@
 [Finding Tiny Faces](https://www.cs.cmu.edu/~peiyunh/tiny/)
 
 It explores three aspects of the problem in finding small faces:
-
 1. scale invariance 
 2. image resolution
 3. contextual reasoning
@@ -42,4 +41,5 @@ We demonstrates that CNN features extracted from multiple layers are effective f
    2. Different strategies: to find large objects (greater than 140px) use 2X smaller canonical resolution; to find small objects (less than 40px) use 2X larger canonical template resolution; otherwise use the same resolution.
 
       ![preview](https://pic1.zhimg.com/v2-30b9341d307d437be10b9ed4458800c1_r.jpg)
+
 
