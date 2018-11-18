@@ -1,5 +1,5 @@
 [Finding Tiny Faces](https://www.cs.cmu.edu/~peiyunh/tiny/)
-11/17/2018 11/18/2018
+11/17/2018
 It explores three aspects of the problem in finding small faces:
 1. scale invariance 
 2. image resolution
